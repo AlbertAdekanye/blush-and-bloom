@@ -6,6 +6,7 @@ import FeaturedProducts from "./components/home/FeaturedProducts";
 import About from "./components/home/About";
 import WhatsAppCTA from "./components/home/WhatsAppCTA";
 import Footer from "./components/layout/Footer";
+import FloatingWhatsApp from "./components/layout/FloatingWhatsApp";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       </main>
 
       <Footer />
+      <FloatingWhatsApp />
     </>
   );
 }
