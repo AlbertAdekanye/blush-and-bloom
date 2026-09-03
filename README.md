@@ -84,7 +84,7 @@ public/
 Clone the repository:
 
 ```bash
-git clone https://github.com/AlbertAdekanye/blush-and-bloom
+git clone https://github.com/AlbertAdekanye/inspired-by-anna
 ```
 
 Move into the project directory:
