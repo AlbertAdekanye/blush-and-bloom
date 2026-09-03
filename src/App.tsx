@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/react";
+
 import AnnouncementBar from "./components/layout/AnnouncementBar";
 import Navbar from "./components/layout/Navbar";
 import Hero from "./components/home/Hero";
@@ -24,6 +26,8 @@ function App() {
 
       <Footer />
       <FloatingWhatsApp />
+
+      <Analytics />
     </>
   );
 }
