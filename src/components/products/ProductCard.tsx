@@ -6,7 +6,7 @@ interface ProductCardProps {
 }
 
 function ProductCard({ product }: ProductCardProps) {
-  const whatsappNumber = "2340000000000";
+  const whatsappNumber = "2349064387743";
 
   const formattedPrice = product.price.toLocaleString("en-NG");
 
