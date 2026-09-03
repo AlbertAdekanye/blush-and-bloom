@@ -8,8 +8,10 @@ type CategoryFilter = "All" | ProductCategory;
 const categories: CategoryFilter[] = [
   "All",
   "Nightwear",
+  "Bras & Panties",
   "Gymwear",
-  "Keyholders",
+  "Beauty",
+  "Perfume & Oils",
   "Accessories",
 ];
 
@@ -24,18 +26,19 @@ function FeaturedProducts() {
   return (
     <section id="shop" className="bg-cream px-5 py-20 sm:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-9">
+        <div className="mb-10">
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-blush-600">
-            Customer favourites
+            Shop the collection
           </p>
 
-          <h2 className="text-3xl font-black tracking-tight text-rosewood sm:text-5xl">
-            Pretty picks for you.
+          <h2 className="max-w-3xl font-serif text-4xl font-bold tracking-tight text-rosewood sm:text-5xl">
+            Curated pieces,
+            <span className="italic text-blush-600"> inspired by you.</span>
           </h2>
 
           <p className="mt-4 max-w-xl leading-7 text-rosewood/65">
-            Find something you love and place your order directly through
-            WhatsApp.
+            Discover fashion, beauty and lifestyle essentials selected for your
+            comfort, confidence and everyday style.
           </p>
         </div>
 
@@ -51,10 +54,11 @@ function FeaturedProducts() {
                 key={category}
                 type="button"
                 onClick={() => setActiveCategory(category)}
+                aria-pressed={isActive}
                 className={`shrink-0 rounded-full border px-5 py-2.5 text-sm font-bold transition ${
                   isActive
-                    ? "border-rosewood bg-rosewood text-white"
-                    : "border-blush-200 bg-white text-rosewood hover:border-blush-500 hover:text-blush-700"
+                    ? "border-black bg-black text-white"
+                    : "border-blush-200 bg-white text-rosewood hover:border-blush-600 hover:text-blush-700"
                 }`}
               >
                 {category}
@@ -64,19 +68,19 @@ function FeaturedProducts() {
         </div>
 
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
         ) : (
           <div className="rounded-[2rem] border border-blush-200 bg-white px-6 py-16 text-center">
-            <p className="text-xl font-black text-rosewood">
-              No products found
+            <p className="font-serif text-2xl font-bold text-rosewood">
+              More beautiful pieces are coming
             </p>
 
             <p className="mt-2 text-rosewood/60">
-              More pretty pieces will be added soon.
+              Please check back soon or contact us on WhatsApp.
             </p>
           </div>
         )}

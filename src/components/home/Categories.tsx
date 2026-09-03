@@ -3,81 +3,94 @@ import { ArrowUpRight } from "lucide-react";
 const categories = [
   {
     name: "Nightwear",
-    description: "Soft and dreamy pieces for cosy nights.",
+    description: "Soft satin sets made for beautiful, comfortable nights.",
     image:
-      "https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?auto=format&fit=crop&w=900&q=85",
+      "https://cdn.shopify.com/s/files/1/0293/9277/files/09-27-25_S3_65_ZDFNL1087_Black_KJ_PC_11-49-51_PLUS_55837_PXF.jpg?crop=center&height=691&v=1760461959&width=461",
   },
   {
-    name: "Gymwear",
-    description: "Confident fits made to move with you.",
+    name: "Bras & Panties",
+    description: "Feminine everyday essentials designed for confidence.",
     image:
-      "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=85",
+      "https://n.nordstrommedia.com/it/7faae020-d573-4338-9716-75e5e5fbb34b.jpeg",
   },
   {
-    name: "Keyholders",
-    description: "Cute little details for your everyday essentials.",
+    name: "Women’s Gymwear",
+    description: "Flattering activewear that moves comfortably with you.",
     image:
-      "https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?auto=format&fit=crop&w=900&q=85",
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1702927948-BND10206-BLACK-BANDIER-1_3_e3275090-9bba-4af3-8db8-16feeadb4d82.jpg",
+  },
+  {
+    name: "Lip Gloss",
+    description: "Glossy shades that add the perfect finishing touch.",
+    image: "https://img.lojasrenner.com.br/item/931694240/zoom/13.jpg",
+  },
+  {
+    name: "Perfume & Oils",
+    description: "Captivating scents created to leave a lasting impression.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1670445045282-36648e89af6b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Girly Accessories",
-    description: "Pretty extras that complete your look.",
+    description: "Cute hair pieces, keyholders and everyday accessories.",
     image:
-      "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=900&q=85",
+      "https://cdn10.phillymag.com/wp-content/uploads/sites/3/2019/08/big-scrunchies--838x1024.jpg",
   },
 ];
 
 function Categories() {
   return (
-    <section id="categories" className="bg-white px-5 py-20 sm:px-8 lg:py-28">
+    <section
+      id="categories"
+      className="bg-black px-5 py-20 text-white sm:px-8 lg:py-28"
+    >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+        <div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-blush-600">
-              Shop your favourites
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-blush-500">
+              Shop by category
             </p>
 
-            <h2 className="max-w-xl text-3xl font-black tracking-tight text-rosewood sm:text-5xl">
-              A little something for every mood.
+            <h2 className="max-w-2xl font-serif text-4xl font-bold tracking-tight sm:text-5xl">
+              Everything you need to feel
+              <span className="italic text-blush-500"> inspired.</span>
             </h2>
           </div>
 
-          <p className="max-w-md leading-7 text-rosewood/65">
-            From bedtime comfort to workout confidence, discover pretty pieces
-            selected to make every day feel special.
+          <p className="max-w-md leading-7 text-white/60">
+            Explore carefully curated fashion, beauty and lifestyle pieces made
+            for every version of you.
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {categories.map((category, index) => (
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {categories.map((category) => (
             <a
               key={category.name}
               href="#shop"
-              className={`group relative overflow-hidden rounded-[2rem] ${
-                index === 0 || index === 3
-                  ? "sm:aspect-[4/5]"
-                  : "sm:aspect-[4/5] lg:translate-y-8"
-              }`}
+              className="group relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-white/10 bg-wine"
             >
               <img
                 src={category.image}
                 alt={category.name}
                 loading="lazy"
-                className="h-[440px] w-full object-cover transition duration-700 group-hover:scale-105 sm:h-full"
+                className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-rosewood/80 via-rosewood/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
 
-              <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                <div className="mb-3 flex items-center justify-between">
-                  <h3 className="text-2xl font-black">{category.name}</h3>
+              <div className="absolute inset-x-0 bottom-0 p-6">
+                <div className="mb-3 flex items-center justify-between gap-4">
+                  <h3 className="font-serif text-2xl font-bold">
+                    {category.name}
+                  </h3>
 
-                  <span className="rounded-full border border-white/40 bg-white/15 p-2.5 backdrop-blur-md transition group-hover:bg-white group-hover:text-rosewood">
+                  <span className="shrink-0 rounded-full border border-white/30 bg-black/30 p-2.5 backdrop-blur-md transition group-hover:border-blush-500 group-hover:bg-blush-600">
                     <ArrowUpRight size={19} />
                   </span>
                 </div>
 
-                <p className="text-sm leading-6 text-white/80">
+                <p className="max-w-sm text-sm leading-6 text-white/70">
                   {category.description}
                 </p>
               </div>

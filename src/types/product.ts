@@ -1,7 +1,9 @@
 export type ProductCategory =
   | "Nightwear"
+  | "Bras & Panties"
   | "Gymwear"
-  | "Keyholders"
+  | "Beauty"
+  | "Perfume & Oils"
   | "Accessories";
 
 export interface Product {

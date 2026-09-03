@@ -8,15 +8,17 @@ interface ProductCardProps {
 function ProductCard({ product }: ProductCardProps) {
   const whatsappNumber = "2340000000000";
 
+  const formattedPrice = product.price.toLocaleString("en-NG");
+
   const message = encodeURIComponent(
-    `Hello Blush & Bloom, I would like to order the ${product.name} for ₦${product.price.toLocaleString()}.`,
+    `Hello Inspired by Anna, I would like to order the ${product.name} for ₦${formattedPrice}. Is it available?`,
   );
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
 
   return (
     <article className="group">
-      <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-blush-100">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-blush-100">
         <img
           src={product.image}
           alt={product.name}
@@ -24,11 +26,11 @@ function ProductCard({ product }: ProductCardProps) {
           className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-rosewood/25 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
         {product.isNew && (
-          <span className="absolute left-4 top-4 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-blush-700 shadow-sm">
-            New
+          <span className="absolute left-4 top-4 rounded-full bg-blush-600 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white">
+            New arrival
           </span>
         )}
 
@@ -37,7 +39,7 @@ function ProductCard({ product }: ProductCardProps) {
           target="_blank"
           rel="noreferrer"
           aria-label={`Order ${product.name} on WhatsApp`}
-          className="absolute bottom-4 left-4 right-4 flex translate-y-3 items-center justify-center gap-2 rounded-full bg-rosewood px-5 py-3.5 font-bold text-white opacity-0 transition duration-300 hover:bg-blush-600 group-hover:translate-y-0 group-hover:opacity-100 focus:translate-y-0 focus:opacity-100"
+          className="absolute bottom-4 left-4 right-4 flex translate-y-3 items-center justify-center gap-2 rounded-full bg-black px-5 py-3.5 font-bold text-white opacity-0 transition duration-300 hover:bg-blush-600 group-hover:translate-y-0 group-hover:opacity-100 focus:translate-y-0 focus:opacity-100"
         >
           <MessageCircle size={18} />
           Order on WhatsApp
@@ -50,11 +52,11 @@ function ProductCard({ product }: ProductCardProps) {
         </p>
 
         <div className="mt-2 flex items-start justify-between gap-4">
-          <h3 className="font-bold leading-6 text-rosewood">{product.name}</h3>
+          <h3 className="font-serif text-lg font-bold leading-6 text-rosewood">
+            {product.name}
+          </h3>
 
-          <p className="shrink-0 font-black text-rosewood">
-            ₦{product.price.toLocaleString()}
-          </p>
+          <p className="shrink-0 font-black text-rosewood">₦{formattedPrice}</p>
         </div>
 
         <a
