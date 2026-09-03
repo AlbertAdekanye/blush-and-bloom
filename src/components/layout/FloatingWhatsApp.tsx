@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 function FloatingWhatsApp() {
-  const whatsappNumber = "2340000000000";
+  const whatsappNumber = "2349064387743";
 
   const message = encodeURIComponent(
     "Hello Inspired by Anna, I would like to make an enquiry.",
